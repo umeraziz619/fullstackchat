@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import { VisuallyHiddenInput } from "../components/styles/StylesComponents";
 import { useInputValidation, useFileHandler } from "6pp";
 import { usernameValidator } from "../utils/validators";
+import { bgGradient } from "../constant/color";
 const Login = () => {
   const border = {
     // border: "2px solid #000",
@@ -35,7 +36,7 @@ const Login = () => {
     e.preventDefault();
   }
   return (
-    <div style={{backgroundImage:"linear-gradient(rgba(200,200,200,0.5),rgba(120,110,220,0.5)"}}>
+    <div style={{backgroundImage:bgGradient}}>
     <Container
       style={border}
       component={"main"}

@@ -24,6 +24,7 @@ import { Link } from "../components/styles/StylesComponents";
 import AvatarCard from "../components/shared/AvatarCard";
 import { sampleChats, sampleUsers } from "../constant/sampleData";
 import UserItem from "../components/shared/UserItem";
+import { bgGradient } from "../constant/color";
 const ConfirmDeleteDialogCom = lazy(() =>
   import("../components/dialogs/ConfirmDeleteDialog")
 );
@@ -175,8 +176,7 @@ const Groups = () => {
     <Grid height={"100vh"} container>
       <Grid
         item
-        bgcolor={"bisque"}
-        sx={{ display: { xs: "none", sm: "block" } }}
+        sx={{ display: { xs: "none", sm: "block" }}}
         sm={4}
       >
         <GroupList myGroups={sampleChats} chatId={chatId} />
@@ -257,6 +257,7 @@ const Groups = () => {
             xs: "block",
             sm: "none",
           },
+          
         }}
         open={isMobileMenuOpen}
         onClose={handlemobileClose}
@@ -268,7 +269,7 @@ const Groups = () => {
 };
 
 const GroupList = ({ w = "100%", myGroups = [], chatId }) => (
-  <Stack width={w}>
+  <Stack width={w} sx={{backgroundImage:bgGradient,overflowY:'auto',height:'100vh'}}>
     {myGroups.length > 0 ? (
       myGroups?.map((group) => (
         <GroupListItem key={group._id} group={group} chatId={chatId} />

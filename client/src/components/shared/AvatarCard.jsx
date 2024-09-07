@@ -2,7 +2,7 @@ import { Avatar, AvatarGroup, Box, Stack } from "@mui/material";
 import React from "react";
 import { transformImage } from "../../lib/features";
 // Todo Transform
-const AvatarCard = ({ avatar = [], max = 4 }) => {
+const AvatarCard = ({ avatar = [], max = 4 ,style={}}) => {
   return (
     <Stack direction="row" spacing={0.5}>
       <AvatarGroup max={max}>
@@ -14,7 +14,7 @@ const AvatarCard = ({ avatar = [], max = 4 }) => {
             sx={{
               width:"3rem",
               height:"3rem",
-              // position:'absolute',
+              ...style
             }} />
           ))}
         </Box>
